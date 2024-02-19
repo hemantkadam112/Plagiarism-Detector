@@ -1,55 +1,36 @@
-Certainly! Here's an updated GitHub description for your Plagiarism Detector app, including the name of the algorithm:
-
----
-
-# Plagiarism Detector
-
-## Overview
-Plagiarism Detector is a web application designed to help educators and content creators identify similarities between documents, aiding in the detection and prevention of plagiarism. The application utilizes the Longest Common Subsequence algorithm (LCS) to analyze text documents and highlight potential instances of plagiarism.
-
-## Features
-- **Document Comparison**: Upload or input text documents to compare for similarities.
-- **Longest Common Subsequence Algorithm (LCS)**: Utilizes the LCS algorithm to detect common sequences of words or characters between documents.
-- **Interactive Interface**: User-friendly interface with intuitive controls for analyzing and visualizing plagiarism results.
-- **Customizable Thresholds**: Set custom similarity thresholds to adjust sensitivity for plagiarism detection.
-- **Export Results**: Export plagiarism detection results for further analysis or documentation.
-
-## Technologies Used
-- **Frontend**: Built using Next.js for a responsive and dynamic user interface.
-- **Algorithm**: Implements the Longest Common Subsequence algorithm (LCS) for efficient text comparison.
-- **Styling**: Styled with CSS to provide a clean and visually appealing interface.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
-Great! Here's the guide to run the Plagiarism Detector locally with Next.js:
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/plagiarism-detector.git
-   ```
+First, run the development server:
 
-2. **Navigate to the project directory:**
-   ```bash
-   cd plagiarism-detector
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-3. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-4. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-5. **Access the application:**
-   Open your web browser and visit:
-   ```
-   http://localhost:3000
-   ```
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Contributing
-Contributions are welcome! Feel free to submit bug reports, feature requests, or pull requests to help improve the Plagiarism Detector.
+## Learn More
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
