@@ -2,21 +2,31 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 
+// React functional component for Plagiarism Detection System
 const PlagiarismDetection: React.FC = () => {
+  // State variables to hold input documents and similarity percentage
   const [document1, setDocument1] = useState<string>("");
   const [document2, setDocument2] = useState<string>("");
   const [similarityPercentage, setSimilarityPercentage] = useState<number>(0);
 
+  // Function to calculate similarity percentage using Longest Common Subsequence algorithm
   const calculateSimilarity = () => {
+    // Call the longestCommonSubsequence function to find the length of the longest common subsequence
     const lcsLength = longestCommonSubsequence(document1, document2);
+    // Calculate the maximum length between the two documents
     const maxLength = Math.max(document1.length, document2.length);
+    // Calculate the similarity percentage by dividing the length of LCS by the maximum length and multiplying by 100
     const percentage = (lcsLength / maxLength) * 100;
+    // Set the similarity percentage state
     setSimilarityPercentage(percentage);
   };
 
+  // Function to find the length of the longest common subsequence using dynamic programming
   const longestCommonSubsequence = (text1: string, text2: string): number => {
+    // Get the lengths of the two input texts
     const m = text1.length;
     const n = text2.length;
+    // Initialize a 2D array to store the lengths of longest common subsequences
     const dp: number[][] = [];
 
     // Initialize dp array
@@ -27,20 +37,22 @@ const PlagiarismDetection: React.FC = () => {
       }
     }
 
-    // Fill dp array
+    // Fill dp array using dynamic programming approach
     for (let i = 1; i <= m; i++) {
       for (let j = 1; j <= n; j++) {
         if (text1[i - 1] === text2[j - 1]) {
-          dp[i][j] = dp[i - 1][j - 1] + 1;
+          dp[i][j] = dp[i - 1][j - 1] + 1; // If characters match, increment the length of LCS
         } else {
-          dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+          dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]); // Otherwise, take the maximum of the two previous values
         }
       }
     }
 
+    // Return the length of the longest common subsequence
     return dp[m][n];
   };
 
+  // JSX structure for the Plagiarism Detection component
   return (
     <div className="bg-gray-800 text-white min-h-screen">
       <div className="container mx-auto py-8">
@@ -65,6 +77,7 @@ const PlagiarismDetection: React.FC = () => {
             />
           </div>
         </div>
+        {/* Button to trigger similarity calculation */}
         <button
           onClick={calculateSimilarity}
           style={{
@@ -86,6 +99,7 @@ const PlagiarismDetection: React.FC = () => {
           Calculate Similarity
         </button>
 
+        {/* Display similarity percentage */}
         <div className="mt-6 text-center">
           <h2 className="text-xl font-semibold mb-2">Similarity Percentage</h2>
           <p className="text-2xl font-bold">
